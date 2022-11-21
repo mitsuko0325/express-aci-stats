@@ -13,10 +13,20 @@ app.get('/', (req,res)=>{
 })
 
 // postman Headers =  Content-Type: application/json, Body = raw {"text": "from postman"}
-app.post('/aci-stats', (req, res)=>{
+// app.post('/aci-stats', (req, res)=>{
+//     today = new Date()
+//     console.log(req.body)
+//     res.send('POST OK')
+//     fs.writeFile(`./aci-stats-${today}`, JSON.stringify(req.body), (err)=>{
+//         if (err) throw err
+//         console.log("write done")
+//     })
+// })
+
+app.put('/aci-stats', (req, res)=>{
     today = new Date()
     console.log(req.body)
-    res.send('OK')
+    res.send('PUT OK')
     fs.writeFile(`./aci-stats-${today}`, JSON.stringify(req.body), (err)=>{
         if (err) throw err
         console.log("write done")
